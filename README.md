@@ -15,6 +15,9 @@ Métodos:
 - Dado un IBAN, mostrar la información de la cuenta con ese IBAN. Si no existe una cuenta con ese IBAN devuelve null.
 - Dado un NIF, mostrar todas las cuentas del cliente con ese NIF 
 - Dado un IBAN y una cantidad de dinero, ingresar esa cantidad en la cuenta con ese IBAN. Si no se encuentra la cuenta con ese IBAN muestra el mensaje "No se encuentra la cuenta"
+- Dado un NIF , devuelve el numero de cuenta de ese cliente.
+- Dado un IBAN devuelve los datos del cliente al que pertenece la cuenta . Si no existe devuelve null.
+
 
 ### Account
 

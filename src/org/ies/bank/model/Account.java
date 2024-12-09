@@ -14,7 +14,7 @@ public class Account {
     }
 
     public void showInfo () {
-        System.out.println("IBAN: " + iban + "Saldo: " + salary + "Cliente: " + customer);
+        System.out.println("IBAN: " + iban + "Saldo: " + salary + "Cliente: " + customer.getNif());
     }
 
     public String getIban() {

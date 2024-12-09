@@ -15,7 +15,7 @@ public class AccountReader {
     }
 
     public Account read() {
-        System.out.println("Introduzca sus datos de cuenta ");
+        System.out.println("Introduzca sus datos de cuenta: ");
         System.out.println("IBAN: ");
         String iban = scanner.nextLine();
 
@@ -23,7 +23,7 @@ public class AccountReader {
         double salary = scanner.nextDouble();
         scanner.nextLine();
 
-        System.out.println("Cliente: ");
+        System.out.println("Cliente");
         Customer customer = customerReader.read();
 
         return new Account(

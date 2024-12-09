@@ -12,7 +12,15 @@ public class Bank {
         this.accounts = accounts;
     }
 
-    public void showAccount(String iban) {
+    public void showAccountCustomer (String iban) {
+        var account = findAccount(iban);
+        if (account == null) {
+            System.out.println("La cuenta no existe");
+        } else {
+            account.getCustomer().showInfo();
+        }
+    }
+    public void showAccount() {
         for (var account : accounts) {
             account.showInfo();
         }
@@ -38,7 +46,7 @@ public class Bank {
     public void deposit(String iban, double amount) {
         var account = findAccount(iban);
 
-        if(account != null) {
+        if (account != null) {
             account.desposit(amount);
         } else {
             System.out.println("Cuenta no encontrada");
@@ -52,6 +60,20 @@ public class Bank {
             }
         }
         return null;
+    }
+
+    public void takeout (String iban , double amount) {
+        var account = findAccount(iban);
+
+        if(account != null) {
+            if (account.getSalary() >= amount) {
+                account.desposit(-amount);
+            } else {
+                System.out.println("No hay suficiente saldo");
+            }
+        } else {
+            System.out.println("Cuenta no encotrada");
+        }
     }
 
     public int returnAccounts(String nif) {
@@ -70,6 +92,16 @@ public class Bank {
                 account.getCustomer();
             }
         return null;
+    }
+
+    public void transfer (String iban , double salary , double amount ) {
+        System.out.println("Introduzca el IBAN de la cuenta remitente: ");
+        var account = findAccount(iban);
+        System.out.println("Introduzca el IBAN de la cuenta receptora: ");
+        var account2 = findAccount(iban);
+
+        if ()
+
     }
 
     public String getName() {

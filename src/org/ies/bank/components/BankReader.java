@@ -20,6 +20,7 @@ public class BankReader {
 
         System.out.println("Cuantas cuentas tienes?: ");
         int size = scanner.nextInt();
+        scanner.nextLine();
 
         Account[] accounts = new Account[size];
         for (int i = 0; i < accounts.length; i++) {

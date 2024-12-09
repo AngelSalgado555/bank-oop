@@ -47,7 +47,7 @@ public class Bank {
         var account = findAccount(iban);
 
         if (account != null) {
-            account.desposit(amount);
+            account.deposit(amount);
         } else {
             System.out.println("Cuenta no encontrada");
         }
@@ -67,7 +67,7 @@ public class Bank {
 
         if(account != null) {
             if (account.getSalary() >= amount) {
-                account.desposit(-amount);
+                account.deposit(-amount);
             } else {
                 System.out.println("No hay suficiente saldo");
             }
@@ -94,13 +94,20 @@ public class Bank {
         return null;
     }
 
-    public void transfer (String iban , double salary , double amount ) {
+    public boolean transfer (String iban , double salary , double amount ) {
         System.out.println("Introduzca el IBAN de la cuenta remitente: ");
-        var account = findAccount(iban);
+        var originAccount = findAccount(iban);
         System.out.println("Introduzca el IBAN de la cuenta receptora: ");
-        var account2 = findAccount(iban);
+        var finalAccount = findAccount(iban);
 
-        if ()
+        if (originAccount == null || finalAccount == null) {
+            System.out.println("Una de las cuentas no existe.");
+            return false ;
+        } else {
+            originAccount.takeOut(amount);
+            finalAccount.deposit(amount);
+            return true;
+        }
 
     }
 

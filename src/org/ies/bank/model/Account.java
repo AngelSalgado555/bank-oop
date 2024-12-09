@@ -17,6 +17,13 @@ public class Account {
         System.out.println("IBAN: " + iban + "Saldo: " + salary + "Cliente: " + customer.getNif());
     }
 
+    public void takeOut (double amount) {
+        salary -= amount;
+        if (salary<amount) {
+            System.out.println("Dinero insuficiente.");
+        }
+    }
+
     public String getIban() {
         return iban;
     }
@@ -62,7 +69,7 @@ public class Account {
                 ", customer=" + customer +
                 '}';
     }
-    public void desposit(double amount) {
+    public void deposit(double amount) {
         salary += amount;
     }
 }

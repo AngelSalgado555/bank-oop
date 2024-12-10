@@ -21,10 +21,7 @@ public class BankApp {
             if (option == 1) {
                 bank.showAccount();
             } else if (option == 2) {
-                System.out.println("Introduzca el IBAN de la cuenta que desea interactuar");
-                System.out.println("IBAN:");
-                String iban = scanner.nextLine();
-                bank.showInfoAccounts(iban);
+                showAccountOption(bank);
             } else if (option == 3) {
                 System.out.println("Introduce un NIF: ");
                 String nif = scanner.nextLine();
@@ -53,8 +50,21 @@ public class BankApp {
                 String iban = scanner.nextLine();
 
                 bank.showAccountCustomer(iban);
+            } else if (option == 8) {
+                System.out.println("Introduce la cuenta de origen");
+                String origin = scanner.nextLine();
+                System.out.println("Introduce la cantidad de al transferencia: ");
+                double cant = scanner.nextDouble();
+                scanner.nextLine();
             }
         } while (option != 8);
+    }
+
+    private void showAccountOption(Bank bank) {
+        System.out.println("Introduzca el IBAN de la cuenta que desea interactuar");
+        System.out.println("IBAN:");
+        String iban = scanner.nextLine();
+        bank.showInfoAccounts(iban);
     }
 
     private int chooseOption() {
@@ -68,7 +78,8 @@ public class BankApp {
             System.out.println("5. Sacar dinero de la cuenta ");
             System.out.println("6. Contar cuentas del cliente ");
             System.out.println("7. Mostrar titular de cuenta");
-            System.out.println("8. Salir");
+            System.out.println("8. Hacer transferencia");
+            System.out.println("9. Salir");
             option = scanner.nextInt();
             scanner.nextLine();
 

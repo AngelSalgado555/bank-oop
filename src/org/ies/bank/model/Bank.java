@@ -94,22 +94,19 @@ public class Bank {
         return null;
     }
 
-    public boolean transfer (String iban , double salary , double amount ) {
-        System.out.println("Introduzca el IBAN de la cuenta remitente: ");
-        var originAccount = findAccount(iban);
-        System.out.println("Introduzca el IBAN de la cuenta receptora: ");
-        var finalAccount = findAccount(iban);
-
-        if (originAccount == null || finalAccount == null) {
-            System.out.println("Una de las cuentas no existe.");
-            return false ;
+    public void transfer (String iban ,double amount ) {
+        var account = findAccount(iban);
+        if (account != null) {
+            if (account.getSalary() >= amount) {
+                account.deposit(-amount);
+            } else {
+                System.out.println("No hay suficiente saldo");
+            }
         } else {
-            originAccount.takeOut(amount);
-            finalAccount.deposit(amount);
-            return true;
+            System.out.println("Cuenta no encontrada");
         }
-
     }
+
 
     public String getName() {
         return name;

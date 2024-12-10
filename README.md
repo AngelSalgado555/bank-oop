@@ -67,4 +67,39 @@ Tendrá un método run() que realice los siguiente:
         - Si no existe se muestra el mensaje "No existe la cuenta"
         - Si hay suficiente saldo, se reduce el saldo. Si no hay suficiente saldo se muestra "Saldo insuficiente"
         - Se muestra la cuenta
+          BankApp3
+          Tendrá un método run() que realice lo siguiente:
 
+### BankApp2
+
+- Pide un banco usando BankReader
+- Busca la cuenta con IBAN "ES0001".
+- Si no existe muestra "La cuenta no existe"
+- Si existe, hace un deposito en la misma de 500
+- Busca otra cuenta con IBAN "ES0002"
+- Si no existe muestra "La cuenta no existe"
+- Si existe, saca 30 euros
+- Muestra en pantalla la información de la cuenta "ES0001"
+- Muestra en pantalla la información de la cuenta "ES0002"
+- Haz una trasnferencia de 500 euros desde "ES0001" a "ES0002"
+
+### BankApp3
+
+- Pide un banco usando BankReader
+- Muestra todas las cuentas del banco
+- Saca 50 de la cuenta ES0003
+- Muestra las cuentas del cliente con NIF 000X
+- Mete 300 en la cuenta ES004
+  - Muestra los datos del titular de la cuenta ES0001
+
+### BankApp4
+
+Tendrá un método run() que realice lo siguiente:
+
+- Pide un banco usando BankReader
+- Busca la cuenta con IBAN ES0001
+- Si no existe la cuenta muestra un mensaje de error
+- Si existe:
+- Muestra los datos de la cuenta
+- Haz una transferencia de todo el dinero de la cuenta ES0001 a la cuenta ES0002
+- Muestra la información del banco

@@ -56,6 +56,7 @@ public class BankApp {
                 System.out.println("Introduce la cantidad de al transferencia: ");
                 double cant = scanner.nextDouble();
                 scanner.nextLine();
+                System.out.println("Ok");
             }
         } while (option != 8);
     }
